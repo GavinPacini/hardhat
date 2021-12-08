@@ -35,7 +35,9 @@ task("envtest", async (args, hre) => {
   console.log(hre.hi);
 });
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 Will yield:

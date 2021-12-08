@@ -92,7 +92,9 @@ To use a plugin, the first step is always to install it using `npm` or `yarn`, f
 ```js
 require("@nomiclabs/hardhat-waffle");
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 Plugins are **essential** to Hardhat projects, so make sure to check out all the available ones and also build your own!

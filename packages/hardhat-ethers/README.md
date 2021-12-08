@@ -92,7 +92,9 @@ task(
   }
 );
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 And then run `npx hardhat blockNumber` to try it.

@@ -49,7 +49,9 @@ task("accounts", "Prints accounts", async (_, { web3 }) => {
   console.log(await web3.eth.getAccounts());
 });
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 And then run `npx hardhat accounts` to try it.

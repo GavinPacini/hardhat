@@ -319,6 +319,13 @@ export function validateConfig(config: any) {
 export function getValidationErrors(config: any): string[] {
   const errors: string[] = [];
 
+  if (Object.keys(config).length === 0) {
+    errors.push(
+      `HardhatConfig cannot be the empty object or undefined, check the config object is properly exported`
+    );
+    return errors;
+  }
+
   // These can't be validated with io-ts
   if (config !== undefined && typeof config.networks === "object") {
     const hardhatNetwork = config.networks[HARDHAT_NETWORK_NAME];
@@ -487,7 +494,7 @@ export function getValidationErrors(config: any): string[] {
 
   // io-ts can get confused if there are errors that it can't understand.
   // Especially around Hardhat Network's config. It will treat it as an HTTPConfig,
-  // and may give a loot of errors.
+  // and may give a lot of errors.
   if (errors.length > 0) {
     return errors;
   }

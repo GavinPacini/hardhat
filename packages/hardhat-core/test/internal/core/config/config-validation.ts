@@ -99,7 +99,7 @@ describe("Config validation", function () {
     });
 
     it("Shouldn't fail without a solc config", function () {
-      const errors = getValidationErrors({});
+      const errors = getValidationErrors({ defaultNetwork: "rinkeby" });
 
       assert.isEmpty(errors);
     });
@@ -206,7 +206,7 @@ describe("Config validation", function () {
     });
 
     it("Shouldn't fail without a paths config", function () {
-      const errors = getValidationErrors({});
+      const errors = getValidationErrors({ defaultNetwork: "rinkeby" });
 
       assert.isEmpty(errors);
     });
@@ -1546,7 +1546,7 @@ describe("Config validation", function () {
     });
 
     it("Shouldn't fail without a networks config", function () {
-      const errors = getValidationErrors({});
+      const errors = getValidationErrors({ defaultNetwork: "rinkeby" });
 
       assert.isEmpty(errors);
     });
@@ -1743,6 +1743,15 @@ describe("Config validation", function () {
           });
         });
       });
+    });
+  });
+
+  describe("empty config", function () {
+    it("Should fail", function () {
+      expectHardhatError(
+        () => validateConfig({}),
+        ERRORS.GENERAL.INVALID_CONFIG
+      );
     });
   });
 });

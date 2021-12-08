@@ -69,7 +69,9 @@ require("@nomiclabs/hardhat-web3");
 
 task("balance", "Prints an account's balance").setAction(async () => {});
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 After saving the file, you should already be able to see the task in Hardhat:
@@ -113,7 +115,9 @@ task("balance", "Prints an account's balance")
   .addParam("account", "The account's address")
   .setAction(async () => {});
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 When you add a parameter to a task, Hardhat will handle its help messages for you:
@@ -147,7 +151,9 @@ task("balance", "Prints an account's balance")
     console.log(web3.utils.fromWei(balance, "ether"), "ETH");
   });
 
-module.exports = {};
+module.exports = {
+  solidity: "0.8.4",
+};
 ```
 
 Finally, we can run it:

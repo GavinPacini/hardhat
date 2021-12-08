@@ -1,6 +1,6 @@
 # Configuration
 
-When Hardhat is run, it searches for the closest `hardhat.config.js` file starting from the Current Working Directory. This file normally lives in the root of your project. An empty `hardhat.config.js` is enough for Hardhat to work.
+When Hardhat is run, it searches for the closest `hardhat.config.js` file starting from the Current Working Directory. This file normally lives in the root of your project.
 
 The entirety of your Hardhat setup (i.e. your config, plugins and custom tasks) is contained in this file.
 
