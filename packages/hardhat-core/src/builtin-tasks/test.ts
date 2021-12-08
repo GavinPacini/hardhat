@@ -53,9 +53,15 @@ subtask(TASK_TEST_RUN_MOCHA_TESTS)
     const mocha = new Mocha(config.mocha);
     testFiles.forEach((file) => mocha.addFile(file));
 
+    // @ts-expect-error
+    mocha.cleanReferencesAfterRun(false);
+
     const testFailures = await new Promise<number>((resolve) => {
       mocha.run(resolve);
     });
+
+    // @ts-expect-error
+    mocha.dispose();
 
     return testFailures;
   });
