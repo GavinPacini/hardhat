@@ -5,10 +5,12 @@ module.exports = {
     mocha: true,
     node: true,
   },
+  plugins: ["chai-friendly"],
   extends: [
     "standard",
     "plugin:prettier/recommended",
     "plugin:node/recommended",
+    "plugin:chai-friendly/recommended",
   ],
   parserOptions: {
     ecmaVersion: 12,
